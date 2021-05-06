@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Restaurant Apps Starter Project</title>
+    <title>Etsuko - Japanese Restaurant Catalog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-<h1>Restaurant Apps Starter Project</h1>
-<p>Hallo coders! Anda berhasil menjalankan starter project.</p>
-<p>Jangan lupa untuk menggunakan salah satu gambar yang berada pada ./images/heros sebagai background hero elemen</p>
-<img src="./images/heros/hero-image_1.jpg" width="450" alt="">
-<img src="./images/heros/hero-image_2.jpg" width="450" alt="">
-<img src="./images/heros/hero-image_3.jpg" width="450" alt="">
-<img src="./images/heros/hero-image_4.jpg" width="450" alt="">
+    <a href="#main-content" class="skip-link">skip to content</a>
+    <nav>
+        <div class="container navigation">
+            <img src="./images/etsuko.png" alt="Etsuko Logo">
+
+            <div id="nav">
+                <a href="/">Home</a>
+                <a href="#">Favorite</a>
+                <a href="https://amhanisa.com">About Us</a>
+            </div>
+            <div id="nav-toggle">
+                <a href="#">MENU</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="hero">
+            <h1>Etsuko </h1>
+            <p>Search your favorite Japanese restaurant in Indonesia</p>
+        </section>
+        <section class="explore-section">
+            <div class="container">
+                <h2 class="title">Explore Restaurant</h2>
+                <div class="catalog" id="resto-catalog">
+
+                </div>
+            </div>
+        </section>
+        <section class="category-section">
+            <div class="container">
+                <h2 class="title">Restaurant Category</h2>
+                <div class="catalog" id="food-category">
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Copyright &copy; 2020 - Etsuko
+        </p>
+    </footer>
 </body>
+
 </html>
