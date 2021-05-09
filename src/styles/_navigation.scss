@@ -35,14 +35,17 @@ nav {
   transition: transform 0.5s;
 
   transform: translateX(-100%);
+  visibility: hidden;
   &.open {
     transform: translateX(0);
+    visibility: visible;
   }
 
   @include desktop {
     position: static;
     width: auto;
     transform: translateX(0);
+    visibility: visible;
   }
 
   a {
@@ -79,5 +82,18 @@ nav {
     min-height: 44px;
     min-width: 44px;
     padding: 1rem 2rem;
+  }
+}
+
+.toggle-button {
+  padding: 0.75rem 1rem;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid $gray;
+  font-weight: 500;
+  color: $dark-gray;
+
+  &:hover {
+    background-color: $gray;
   }
 }

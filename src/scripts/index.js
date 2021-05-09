@@ -24,7 +24,7 @@ const truncateString = (str, num) => {
 const restaurantList = data.restaurants
   .map((restaurant) => {
     return `
-  <div class="card">
+  <a href="#" class="card" id="main-content">
       <div class="card-image-wrapper">
         <img src="${restaurant.pictureId}" class="card-image" alt="${
       restaurant.name
@@ -36,7 +36,7 @@ const restaurantList = data.restaurants
       <p class="card-subtitle">${restaurant.city}</p>
       <p class="card-desc">${truncateString(restaurant.description, 100)}</p>
   </div>
-  </div>`;
+  </a>`;
   })
   .join("");
 
@@ -47,14 +47,14 @@ const foodCategory = document.querySelector("#food-category");
 const categoryList = category.category
   .map((category) => {
     return `
-  <div class="card-category">
+  <a href="#" class="card-category">
   <div class="img-wrapper">
       <img src="${"./images/" + category.image}" alt="${category.name}">
   </div>
   <div class="category-body">
       <p class="category-text">${category.name}</p>
   </div>
-  </div>`;
+  </a>`;
   })
   .join("");
 
