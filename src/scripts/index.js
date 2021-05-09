@@ -13,28 +13,18 @@ navToggle.addEventListener("click", (event) => {
 
 const catalog = document.querySelector("#resto-catalog");
 
-const truncateString = (str, num) => {
-  if (str.length > num) {
-    return str.slice(0, num) + "...";
-  } else {
-    return str;
-  }
-};
-
 const restaurantList = data.restaurants
   .map((restaurant) => {
     return `
   <a href="#" class="card" id="main-content">
       <div class="card-image-wrapper">
-        <img src="${restaurant.pictureId}" class="card-image" alt="${
-      restaurant.name
-    }">
+        <img src="${restaurant.pictureId}" class="card-image" alt="${restaurant.name}">
       </div>
   <div class="card-body">
       <span class="card-rating">${restaurant.rating} / 5.0</span>
       <h2 class="card-title">${restaurant.name}</h2>
       <p class="card-subtitle">${restaurant.city}</p>
-      <p class="card-desc">${truncateString(restaurant.description, 100)}</p>
+      <p class="card-desc">${restaurant.description}</p>
   </div>
   </a>`;
   })
