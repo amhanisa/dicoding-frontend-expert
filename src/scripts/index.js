@@ -2,13 +2,12 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import data from '../DATA.json';
 import category from '../category.json';
+import App from './views/app';
 
-const navigationElement = document.querySelector('#nav');
-const navToggle = document.querySelector('#nav-toggle');
-
-navToggle.addEventListener('click', (event) => {
-  navigationElement.classList.toggle('open');
-  event.stopPropagation;
+const app = new App({
+  button: document.querySelector('#nav-toggle'),
+  drawer: document.querySelector('#nav'),
+  content: document.querySelector('#content'),
 });
 
 const catalog = document.querySelector('#resto-catalog');
