@@ -32,7 +32,7 @@ nav {
   left: 0;
   background-color: white;
   width: 100%;
-  transition: transform 0.5s;
+  transition: 0.5s;
 
   transform: translateX(-100%);
   visibility: hidden;
@@ -73,19 +73,11 @@ nav {
   @include desktop {
     display: none;
   }
-
-  a {
-    display: block;
-    text-decoration: none;
-    font-weight: 500;
-    color: $gray;
-    min-height: 44px;
-    min-width: 44px;
-    padding: 1rem 2rem;
-  }
 }
 
 .toggle-button {
+  min-height: 44px;
+  min-width: 44px;
   padding: 0.75rem 1rem;
   background-color: white;
   border-radius: 5px;
