@@ -1,0 +1,91 @@
+.detail-rating {
+  background-color: $blue;
+  border-radius: 5px;
+  padding: 0.2rem 0.4rem;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+  width: fit-content;
+}
+
+.restaurant-category {
+  background-color: $gray;
+  border-radius: 5px;
+  padding: 0.2rem 0.4rem;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  width: fit-content;
+  margin-right: 0.5rem;
+}
+
+.menu-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include desktop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.menu-title {
+  font-weight: 500;
+}
+
+.menu-list {
+  list-style-position: inside;
+  // padding-left: 1rem;
+}
+
+.review-box {
+  margin-bottom: 2rem;
+}
+
+.customer-name {
+  font-weight: 500;
+}
+
+.customer-review {
+  color: $gray;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.form {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  display: block;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.form-textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+}
+.form-submit {
+  display: block;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0 0.5rem auto;
+}

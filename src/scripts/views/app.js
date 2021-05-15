@@ -1,20 +1,29 @@
-import DrawerInitiator from '../utils/drawer-initiator';
+import routes from '../routes/routes';
+import URLParser from '../routes/URLParser';
+import DrawerInitiator from '../utils/DrawerInitiator';
 
 class App {
   constructor({ button, drawer, content }) {
-    this._button = button;
-    this._drawer = drawer;
-    this._content = content;
+    this.button = button;
+    this.drawer = drawer;
+    this.content = content;
 
-    this._initialAppShell();
+    this.initialAppShell();
   }
 
-  _initialAppShell() {
+  initialAppShell() {
     DrawerInitiator.init({
-      button: this._button,
-      drawer: this._drawer,
-      content: this._content,
+      button: this.button,
+      drawer: this.drawer,
+      content: this.content,
     });
+  }
+
+  async renderPage() {
+    const url = URLParser.parseActiveURLWithCombiner();
+    const page = routes[url];
+    this.content.innerHTML = await page.render();
+    await page.afterRender();
   }
 }
 
