@@ -1,4 +1,6 @@
+/* eslint-disable class-methods-use-this */
 import { LitElement, html } from 'lit';
+import { Notyf } from 'notyf';
 import CONFIG from '../../globals/config';
 import './CustomerReview';
 
@@ -42,11 +44,32 @@ class RestaurantDetail extends LitElement {
       .then((res) => {
         const newCustomerReview = res.customerReviews.pop();
         this.reviews = [...this.reviews, newCustomerReview];
-        // console.log(this.restaurant.customerReviews);
+        this.cleanReviewForm();
+
+        const notyf = new Notyf({
+          position: {
+            x: 'right',
+            y: 'top',
+          },
+        });
+
+        notyf.success('Berhasil menambahkan review');
       })
-      .catch(function (res) {
-        console.error(res);
+      .catch(() => {
+        const notyf = new Notyf({
+          position: {
+            x: 'right',
+            y: 'top',
+          },
+        });
+
+        notyf.error('Gagal menambahkan review');
       });
+  }
+
+  cleanReviewForm() {
+    document.getElementById('name').value = '';
+    document.getElementById('review').value = '';
   }
 
   render() {

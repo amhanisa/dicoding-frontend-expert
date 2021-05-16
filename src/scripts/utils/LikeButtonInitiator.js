@@ -28,7 +28,6 @@ const LikeButtonInitiator = {
 
     const likeButton = document.querySelector('#like-button');
     likeButton.addEventListener('click', () => {
-      console.log('defdef');
       FavoriteRestaurantIDB.putRestaurant(this.restaurant);
       this.renderButton();
     });
@@ -39,7 +38,6 @@ const LikeButtonInitiator = {
 
     const likeButton = document.querySelector('#like-button');
     likeButton.addEventListener('click', () => {
-      console.log('asdasd');
       FavoriteRestaurantIDB.deleteRestaurant(this.restaurant.id);
       this.renderButton();
     });

@@ -1,5 +1,6 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
+import 'notyf/notyf.min.css';
 import App from './views/App';
 
 const app = new App({
