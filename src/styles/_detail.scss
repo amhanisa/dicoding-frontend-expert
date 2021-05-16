@@ -89,3 +89,21 @@
   padding: 0.5rem 1rem;
   margin: 0.5rem 0 0.5rem auto;
 }
+
+.like-button {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem;
+  background-color: red;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+}
