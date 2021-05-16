@@ -1,8 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FaviconWebpackPlugin = require('favicons-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
+const { InjectManifest } = require('workbox-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -62,6 +64,10 @@ module.exports = {
           purpose: 'maskable',
         },
       ],
+    }),
+    new InjectManifest({
+      swSrc: path.resolve('src/scripts/utils/service-worker.js'),
+      swDest: 'service-worker.js',
     }),
   ],
   node: {
