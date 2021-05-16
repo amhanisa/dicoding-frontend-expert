@@ -5,6 +5,10 @@ import { precacheAndRoute } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate, NetworkFirst } from 'workbox-strategies';
 import { ExpirationPlugin } from 'workbox-expiration';
+import { skipWaiting, clientsClaim } from 'workbox-core';
+
+skipWaiting();
+clientsClaim();
 
 precacheAndRoute(
   [
