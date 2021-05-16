@@ -10,7 +10,7 @@
 }
 
 .restaurant-category {
-  background-color: $gray;
+  background-color: $light-gray;
   border-radius: 5px;
   padding: 0.2rem 0.4rem;
   color: white;
@@ -19,6 +19,20 @@
   display: inline-block;
   width: fit-content;
   margin-right: 0.5rem;
+}
+
+.detail-menu {
+  margin: 2rem 0;
+}
+
+.detail-title {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+
+  @include desktop {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 }
 
 .menu-wrapper {
@@ -35,11 +49,12 @@
 
 .menu-title {
   font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .menu-list {
   list-style-position: inside;
-  // padding-left: 1rem;
+  margin-bottom: 1rem;
 }
 
 .review-box {
@@ -48,16 +63,20 @@
 
 .customer-name {
   font-weight: 500;
+  color: $dark-gray;
 }
 
 .customer-review {
-  color: $gray;
   text-align: justify;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+.review-date {
+  color: $gray;
 }
 
 .form {
@@ -69,18 +88,21 @@
 
 .form-label {
   display: block;
+  margin: 0.5rem 0;
 }
 
 .form-input {
   display: block;
   width: 100%;
   padding: 0.5rem;
+  font-size: 1rem;
 }
 
 .form-textarea {
   display: block;
   width: 100%;
   padding: 0.5rem;
+  font-size: 1rem;
 }
 .form-submit {
   display: block;
@@ -88,6 +110,14 @@
   min-height: 44px;
   padding: 0.5rem 1rem;
   margin: 0.5rem 0 0.5rem auto;
+  border-radius: 5px;
+  border: 2px solid $green;
+  font-weight: 500;
+
+  &:hover,
+  &:focus {
+    background-color: $green;
+  }
 }
 
 .like-button {

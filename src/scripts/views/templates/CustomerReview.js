@@ -24,7 +24,7 @@ class CustomerReview extends LitElement {
             <div class="review-box">
               <strong class="customer-name">${review.name}</strong>
               <p class="customer-review">${review.review}</p>
-              <p>${review.date}</p>
+              <p class="review-date">${review.date}</p>
             </div>
           `
       )

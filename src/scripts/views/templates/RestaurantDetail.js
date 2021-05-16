@@ -93,7 +93,7 @@ class RestaurantDetail extends LitElement {
           <p class="card-desc">${this.restaurant.description}</p>
         </div>
         <div class="detail-menu">
-          <h2>Menu</h2>
+          <h2 class="detail-title">Menu</h2>
 
           <div class="menu-wrapper">
             <div>
@@ -115,13 +115,13 @@ class RestaurantDetail extends LitElement {
           </div>
         </div>
         <div class="detail-review">
-          <h2>Customer Review</h2>
+          <h2 class="detail-title">Customer Review</h2>
           
             <form class="form" @submit=${this.sendCustomerReview}>
-              <label for="name" class="form-label">Nama Anda</label>
-              <input type="text" name="name" id="name" class="form-input" required>
+              <label for="name" class="form-label" >Nama Anda</label>
+              <input type="text" name="name" id="name" class="form-input" placeholder="Nama Anda" required>
               <label for="review" class="form-label">Review</label>
-              <textarea name="review" id="review" class="form-textarea" required></textarea>
+              <textarea name="review" id="review" class="form-textarea" placeholder="Tuliskan review anda" required></textarea>
               <input type="submit" class="form-submit">
             </form>
 
