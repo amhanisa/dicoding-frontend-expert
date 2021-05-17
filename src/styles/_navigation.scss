@@ -11,7 +11,7 @@ nav {
       height: 80px;
     }
 
-    img {
+    .nav-icon {
       width: 100px;
       height: auto;
 
@@ -27,6 +27,7 @@ nav {
 }
 
 #nav {
+  z-index: 10;
   position: absolute;
   top: 60px;
   left: 0;

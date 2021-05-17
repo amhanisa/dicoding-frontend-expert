@@ -83,6 +83,7 @@
   .card-image-wrapper {
     height: 200px;
     overflow: hidden;
+    position: relative;
   }
 
   .card-image {
@@ -96,14 +97,23 @@
   }
 
   .card-rating {
-    background-color: $blue;
-    border-radius: 5px;
-    padding: 0.2rem 0.4rem;
+    background-color: black;
+    border-radius: 5px 0 0 5px;
+    padding: 0.5rem 1rem;
     color: white;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    display: block;
-    width: fit-content;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    i {
+      color: $yellow;
+    }
+
+    span {
+      margin-left: 0.5rem;
+      font-weight: 500;
+    }
   }
 
   .card-title {

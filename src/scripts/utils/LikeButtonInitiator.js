@@ -1,3 +1,4 @@
+import { Notyf } from 'notyf';
 import FavoriteRestaurantIDB from '../data/FavoriteRestaurantIDB';
 import { createLikeButton, createLikedButton } from '../views/templates/LikeButton';
 
@@ -29,6 +30,16 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#like-button');
     likeButton.addEventListener('click', () => {
       FavoriteRestaurantIDB.putRestaurant(this.restaurant);
+
+      const notyf = new Notyf({
+        position: {
+          x: 'right',
+          y: 'top',
+        },
+      });
+
+      notyf.success('Restaurant ditambahkan ke daftar favorite');
+
       this.renderButton();
     });
   },
@@ -39,6 +50,16 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#like-button');
     likeButton.addEventListener('click', () => {
       FavoriteRestaurantIDB.deleteRestaurant(this.restaurant.id);
+
+      const notyf = new Notyf({
+        position: {
+          x: 'right',
+          y: 'top',
+        },
+      });
+
+      notyf.success('Restaurant dihapus dari daftar favorite');
+
       this.renderButton();
     });
   },

@@ -74,23 +74,32 @@ class RestaurantDetail extends LitElement {
 
   render() {
     return html`
-      <div class="container">
+      <div class="detail-img-wrapper">
         <img
           src="${CONFIG.API_BASE_IMAGE_URL}medium/${this.restaurant.pictureId}"
-          class="card-image"
+          class="detail-image"
           alt="${this.restaurant.name}"
         />
+        <div class="detail-rating">
+          <i class="fas fa-star"></i>
+          <span>${this.restaurant.rating}</span>
+        </div>
         <div class="detail-overview">
-          <span class="detail-rating">${this.restaurant.rating} / 5.0</span>
-          <h2 class="card-title" id="main-content">${this.restaurant.name}</h2>
-          <p class="card-subtitle">${this.restaurant.address}</p>
-          <p class="card-subtitle">${this.restaurant.city}</p>
+          <h2 class="detail-restaurant-title" id="main-content">${this.restaurant.name}</h2>
+        
 
           ${this.restaurant.categories.map(
             (category) => html`<span class="restaurant-category">${category.name}</span>`
           )}
+        
+        </div>
+      </div>
+      <div class="container">
+       
+        <div class="detail-desc">
+          <p class="restaurant-address">${this.restaurant.address},  ${this.restaurant.city}</p>
 
-          <p class="card-desc">${this.restaurant.description}</p>
+          <p class="restaurant-desc">${this.restaurant.description}</p>
         </div>
         <div class="detail-menu">
           <h2 class="detail-title">Menu</h2>
@@ -100,17 +109,17 @@ class RestaurantDetail extends LitElement {
               <p class="menu-title">
                 Foods
               </p>
-              <ol class="menu-list">
+              <ul class="menu-list">
                 ${this.restaurant.menus.foods.map((food) => html`<li>${food.name}</li>`)}
-              </ol>
+              </ul>
             </div>
             <div>
               <p class="menu-title">
                 Drinks
               </p>
-              <ol class="menu-list">
+              <ul class="menu-list">
                 ${this.restaurant.menus.drinks.map((drink) => html`<li>${drink.name}</li>`)}
-              </ol>
+              </ul>
             </div>
           </div>
         </div>
@@ -122,7 +131,7 @@ class RestaurantDetail extends LitElement {
               <input type="text" name="name" id="name" class="form-input" placeholder="Nama Anda" required>
               <label for="review" class="form-label">Review</label>
               <textarea name="review" id="review" class="form-textarea" placeholder="Tuliskan review anda" required></textarea>
-              <input type="submit" class="form-submit">
+              <input type="submit" class="form-submit" value="SUBMIT">
             </form>
 
           <customer-review .reviews=${this.reviews}>
