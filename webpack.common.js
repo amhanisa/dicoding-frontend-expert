@@ -44,7 +44,7 @@ module.exports = {
       ],
     }),
     new FaviconWebpackPlugin({
-      logo: './src/public/images/favicon-white.png',
+      logo: './src/public/images/favicon-transparent.png',
     }),
     new WebpackPwaManifest({
       name: 'Etsuko',
@@ -55,13 +55,14 @@ module.exports = {
       crossorigin: 'use-credentials', // can be null, use-credentials or anonymous
       icons: [
         {
-          src: path.resolve('src/public/images/favicon-transparent.png'),
-          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+          src: path.resolve('src/public/images/favicon-opaque.jpg'),
+          size: [96, 128, 192, 256, 384, 512],
+          purpose: 'maskable',
         },
         {
-          src: path.resolve('src/public/images/favicon-opaque.jpg'),
-          size: '1024x1024',
-          purpose: 'maskable',
+          src: path.resolve('src/public/images/favicon-transparent.png'),
+          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+          purpose: 'any',
         },
       ],
     }),
