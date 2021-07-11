@@ -86,37 +86,27 @@ class RestaurantDetail extends LitElement {
         </div>
         <div class="detail-overview">
           <h2 class="detail-restaurant-title" id="main-content">${this.restaurant.name}</h2>
-        
-
           ${this.restaurant.categories.map(
             (category) => html`<span class="restaurant-category">${category.name}</span>`
           )}
-        
         </div>
       </div>
       <div class="container">
-       
         <div class="detail-desc">
-          <p class="restaurant-address">${this.restaurant.address},  ${this.restaurant.city}</p>
-
+          <p class="restaurant-address">${this.restaurant.address}, ${this.restaurant.city}</p>
           <p class="restaurant-desc">${this.restaurant.description}</p>
         </div>
         <div class="detail-menu">
           <h2 class="detail-title">Menu</h2>
-
           <div class="menu-wrapper">
             <div>
-              <p class="menu-title">
-                Foods
-              </p>
+              <p class="menu-title">Foods</p>
               <ul class="menu-list">
                 ${this.restaurant.menus.foods.map((food) => html`<li>${food.name}</li>`)}
               </ul>
             </div>
             <div>
-              <p class="menu-title">
-                Drinks
-              </p>
+              <p class="menu-title">Drinks</p>
               <ul class="menu-list">
                 ${this.restaurant.menus.drinks.map((drink) => html`<li>${drink.name}</li>`)}
               </ul>
@@ -125,16 +115,27 @@ class RestaurantDetail extends LitElement {
         </div>
         <div class="detail-review">
           <h2 class="detail-title">Customer Review</h2>
-          
-            <form class="form" @submit=${this.sendCustomerReview}>
-              <label for="name" class="form-label" >Nama Anda</label>
-              <input type="text" name="name" id="name" class="form-input" placeholder="Nama Anda" required>
-              <label for="review" class="form-label">Review</label>
-              <textarea name="review" id="review" class="form-textarea" placeholder="Tuliskan review anda" required></textarea>
-              <input type="submit" class="form-submit" value="SUBMIT">
-            </form>
-
-          <customer-review .reviews=${this.reviews}>
+          <form class="form" @submit=${this.sendCustomerReview}>
+            <label for="name" class="form-label">Nama Anda</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-input"
+              placeholder="Nama Anda"
+              required
+            />
+            <label for="review" class="form-label">Review</label>
+            <textarea
+              name="review"
+              id="review"
+              class="form-textarea"
+              placeholder="Tuliskan review anda"
+              required
+            ></textarea>
+            <input type="submit" class="form-submit" value="SUBMIT" />
+          </form>
+          <customer-review .reviews=${this.reviews}></customer-review>
         </div>
       </div>
     `;

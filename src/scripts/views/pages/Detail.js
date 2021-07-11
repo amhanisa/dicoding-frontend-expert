@@ -1,7 +1,7 @@
 import { Notyf } from 'notyf';
 import restaurantSource from '../../data/restaurantSource';
 import URLParser from '../../routes/URLParser';
-import LikeButtonInitiator from '../../utils/LikeButtonInitiator';
+import LikeButtonPresenter from '../../utils/LikeButtonPresenter';
 import RestaurantDetail from '../templates/RestaurantDetail';
 
 const Detail = {
@@ -23,7 +23,7 @@ const Detail = {
       const loading = document.querySelector('.loading-ring');
       loading.classList.add('hide');
 
-      LikeButtonInitiator.init({
+      LikeButtonPresenter.init({
         likeButtonContainer: document.querySelector('#likeButtonContainer'),
         restaurant: restaurant.restaurant,
       });

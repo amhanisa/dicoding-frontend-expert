@@ -1,8 +1,8 @@
 import { Notyf } from 'notyf';
 import FavoriteRestaurantIDB from '../data/FavoriteRestaurantIDB';
-import { createLikeButton, createLikedButton } from '../views/templates/LikeButton';
+import { createLikeButton, createUnlikeButton } from '../views/templates/LikeButton';
 
-const LikeButtonInitiator = {
+const LikeButtonPresenter = {
   async init({ likeButtonContainer, restaurant }) {
     this.likeButtonContainer = likeButtonContainer;
     this.restaurant = restaurant;
@@ -13,7 +13,7 @@ const LikeButtonInitiator = {
     const { id } = this.restaurant;
 
     if (await this.isRestaurantExist(id)) {
-      this.renderLiked();
+      this.renderUnlike();
     } else {
       this.renderLike();
     }
@@ -44,8 +44,8 @@ const LikeButtonInitiator = {
     });
   },
 
-  renderLiked() {
-    this.likeButtonContainer.innerHTML = createLikedButton();
+  renderUnlike() {
+    this.likeButtonContainer.innerHTML = createUnlikeButton();
 
     const likeButton = document.querySelector('#like-button');
     likeButton.addEventListener('click', () => {
@@ -65,4 +65,4 @@ const LikeButtonInitiator = {
   },
 };
 
-export default LikeButtonInitiator;
+export default LikeButtonPresenter;
