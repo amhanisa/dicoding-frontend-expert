@@ -9,11 +9,19 @@
 }
 
 .hero {
-  background-image: url('../public/images/heros/hero-image_1.jpg');
+  background-image: url('images/hero-image_1-small.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 500px;
+
+  @include tablet {
+    background-image: url('images/hero-image_1-large.jpg');
+  }
+
+  @include desktop {
+    background-image: url('images/hero-image_1-large.jpg');
+  }
 
   display: flex;
   flex-direction: column;

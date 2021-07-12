@@ -28,8 +28,9 @@ class RestaurantCard extends LitElement {
       <a href="#/detail/${this.id}" class="card-content">
         <div class="card-image-wrapper">
           <img
-            src="${CONFIG.API_BASE_IMAGE_URL}small/${this.pictureId}"
-            class="card-image"
+            src="images/placeholder.png"
+            data-src="${CONFIG.API_BASE_IMAGE_URL}small/${this.pictureId}"
+            class="card-image lazyload"
             alt="${this.name}"
           />
           <span class="card-rating">

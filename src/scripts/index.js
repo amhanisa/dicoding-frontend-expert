@@ -1,6 +1,8 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import 'notyf/notyf.min.css';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import App from './views/App';
 import registerServiceWorker from './utils/registerServiceWorker';
 
