@@ -1,11 +1,12 @@
 import { Notyf } from 'notyf';
 import restaurantSource from '../../data/restaurantSource';
 import RestaurantCard from '../templates/RestaurantCard';
+import { createSkeletonCatalogTemplate } from '../templates/TemplateCreator';
 
 const Home = {
   async render() {
     return `
-      <section class="hero">
+      <section class="hero"> 
         <h1>ETSUKO</h1>
         <p>Search your favorite Japanese restaurant in Indonesia</p>
       </section>
@@ -13,7 +14,9 @@ const Home = {
         <div class="container">
           <h2 class="title">Explore Restaurant</h2>
           <div class="loading-ring"></div>
-          <div class="catalog" id="resto-catalog"></div>
+          <div class="catalog" id="resto-catalog">
+          ${createSkeletonCatalogTemplate(20)}
+          </div>
         </div>
       </section>
     `;
@@ -23,6 +26,7 @@ const Home = {
     try {
       const restaurants = await restaurantSource.restaurantList();
       const restaurantCatalog = document.querySelector('#resto-catalog');
+      restaurantCatalog.innerHTML = '';
 
       const loading = document.querySelector('.loading-ring');
       loading.classList.add('hide');

@@ -33,16 +33,17 @@ nav {
   left: 0;
   background-color: white;
   width: 100%;
-  transition: 0.5s;
 
-  transform: translateX(-100%);
+  transform: translateX(-120%);
   visibility: hidden;
   &.open {
+    transition: 0.5s;
     transform: translateX(0);
     visibility: visible;
   }
 
   @include desktop {
+    transition: 0s;
     position: static;
     width: auto;
     transform: translateX(0);
@@ -79,6 +80,8 @@ nav {
 .toggle-button {
   min-height: 44px;
   min-width: 44px;
+  height: 3rem;
+  width: 6rem;
   padding: 0.75rem 1rem;
   background-color: white;
   border-radius: 5px;

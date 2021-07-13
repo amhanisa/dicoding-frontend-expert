@@ -65,14 +65,18 @@
   grid-template-columns: 1fr;
   gap: 1rem;
 
+  min-height: 500rem;
+
   @include tablet {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    min-height: 50rem;
   }
 
   @include desktop {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    min-height: 150rem;
   }
 }
 
