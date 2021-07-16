@@ -10,7 +10,7 @@ const Home = {
         <h1>ETSUKO</h1>
         <p>Search your favorite Japanese restaurant in Indonesia</p>
       </section>
-      <section class="explore-section">
+      <section class="explore-section" id="main-content">
         <div class="container">
           <h2 class="title">Explore Restaurant</h2>
           <div class="loading-ring"></div>
